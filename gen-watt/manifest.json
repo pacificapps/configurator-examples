@@ -1,0 +1,28 @@
+{
+  "tag": "idlog-product-configurator",
+  "assets": [
+    {
+      "type": "module",
+      "url": "gen-watt/gen-watt.esm.js",
+      "attributes": {
+        "data-stencil-namespace": "app"
+      }
+    },
+    {
+      "type": "stylesheet",
+      "url": "gen-watt/gen-watt.css"
+    },
+    {
+      "type": "module",
+      "url": "https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    },
+    {
+      "type": "stylesheet",
+      "url": "noty.css"
+    },
+    {
+      "type": "stylesheet",
+      "url": "metroui.css"
+    }
+  ]
+}

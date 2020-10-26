@@ -1,0 +1,16 @@
+:host {
+  display: block;
+  flex: 1;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 20rem;
+  flex-direction: column;
+}
+
+model-viewer {
+  height: 100%;
+  width: 100%;
+  flex: 1;
+}

@@ -1,0 +1,109 @@
+@import '../../../node_modules/noty/lib/noty.css';
+
+@import '../../../node_modules/noty/lib/themes/metroui.css';
+
+header {
+  background: #0e304f;
+  color: white;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+h1 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #fff;
+  padding: 0 12px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  margin: auto;
+  position: relative;
+}
+
+.container {
+  position: relative;
+}
+
+.canvas {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.submit {
+  background-color: rgb(14, 48, 79);
+  border: 0;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-size: 18px;
+  transition: background ease 0.5s;
+}
+
+.submit:hover {
+  background-color: rgba(14, 48, 79, 0.75);
+}
+
+.modal-overlay {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.26);
+  display: flex;
+  height: 100%;
+  left: 0;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.modal {
+  background-color: white;
+  padding: 1.2em;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.close {
+  background-color: rgb(14, 48, 79);
+  border: 0;
+  color: white;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  font-size: 18px;
+  transition: background ease 0.5s;
+}
+
+.close:hover {
+  background-color: rgba(14, 48, 79, 0.75);
+}
+
+@media (min-width: 768px) {
+  .default-behavior .config-group {
+    display: flex;
+    flex-direction: row-reverse;
+    min-height: 35rem;
+  }
+
+  .default-behavior .submit {
+    background-color: #eee;
+    border: 0;
+    color: black;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    font-size: 18px;
+    transition: background ease 0.5s;
+  }
+  .default-behavior .submit:hover {
+    background-color: rgba(1238, 238, 238, 0.75);
+  }
+  .default-behavior price-preview {
+    background: rgb(14, 48, 79);
+    color: #eee;
+  }
+}

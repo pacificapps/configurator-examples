@@ -1,0 +1,26 @@
+:host {
+  display: block;
+  margin-top: 1rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.row label {
+  margin-left: 10px;
+}
+
+.pallet {
+  border: 1px solid grey;
+  border-radius: 30px;
+  height: 30px;
+  width: 30px;
+}
+
+.pallet.selected {
+  border-color: black;
+  box-shadow: 0 0 5px 3px inset white;
+}

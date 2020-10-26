@@ -1,0 +1,71 @@
+:host {
+  display: block;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.links {
+  list-style: none;
+  background: rgb(14, 48, 79);
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.links li {
+  box-sizing: border-box;
+  border-left: 2px solid transparent;
+  transition: background ease 0.5s;
+}
+
+.links li:hover {
+  background: rgb(27, 92, 153);
+}
+
+.links li.active {
+  border-top: 2px solid white;
+  background: linear-gradient(180deg, rgb(27, 92, 153) 0%, rgba(14, 48, 79, 1) 33%, rgba(14, 48, 79, 1) 100%);
+}
+
+.links button {
+  color: white;
+  font-size: 16px;
+  background: transparent;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 30px;
+  text-transform: capitalize;
+}
+
+.contents {
+  background: #eee;
+  box-sizing: border-box;
+  height: 9rem;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .default-behavior.container {
+    height: 100%;
+    flex-direction: row;
+  }
+
+  .default-behavior .contents {
+    height: 100%;
+    width: 8rem;
+  }
+
+  .default-behavior .links {
+    display: block;
+  }
+
+  .default-behavior .links li.active {
+    border-top: 0;
+    border-left: 2px solid white;
+    background: linear-gradient(90deg, rgb(27, 92, 153) 0%, rgba(14, 48, 79, 1) 33%, rgba(14, 48, 79, 1) 100%);
+  }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/gen-watt.esm.js"></script>
+  <script nomodule src="/build/gen-watt.js"></script>
+  <link rel="stylesheet" href="/build/gen-watt.css">
+
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
+  <idlog-product-configurator mode="2d" force-mobile="false" org-id="00D1U0000012g3pUAA" config-id="a0F1U00000HGNygUAH">
+  </idlog-product-configurator>
+
+  <script>
+    const t = document.getElementsByTagName('idlog-product-configurator');
+    const a = t[0];
+    a.setAttribute('user', JSON.stringify({ firstName: 'test' }))
+  </script>
+</body>
+
+</html>
