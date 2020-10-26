@@ -5,20 +5,69 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Modes } from "./components/idlog-product-configurator/idlog-product-configurator";
 import { ICard, IOption, IUser, IWattChangeEvent } from "./components/idlog-product-configurator/interfaces";
 export namespace Components {
     interface IdlogProductConfigurator {
+        /**
+          * The iDialogue API URL that the configurator would communicate with.
+          * @type {string}
+         */
         "apiUrl": string;
+        /**
+          * The base URL of the assets used by the configurator.
+          * @type {string}
+         */
         "baseUrl": string;
+        /**
+          * The ID of the template or configuration that the configurator would use to load the initial configuration options.
+          * @type {string}
+         */
         "configId": string;
+        /**
+          * The Lead ID. If empty, it'll auto-create one when the user interacts with the configurator for the first time.
+          * @type {string}
+         */
         "crmId": string;
+        /**
+          * Force mobile layout view, primarily used by the portal builder to preview the mobile view of the configurator.
+          * @type {boolean}
+         */
         "forceMobile": boolean;
+        /**
+          * If preview mode is enabled, the configurator will not send any events/requests to the API endpoint
+          * @type {boolean}
+         */
         "isPreviewMode": boolean;
+        /**
+          * The item ID of the configuration plugin that is loaded in a particular room.
+          * @type {string}
+         */
         "itemId": string;
+        /**
+          * The member ID of the current user in the room.
+          * @type {string}
+         */
         "memberId": string;
-        "mode": string;
+        /**
+          * The configurator mode. Note: 3D models are not included in this repository.
+          * @type {Modes}
+         */
+        "mode": Modes;
+        /**
+          * The Salesforce OrgID that the configurator would use to fetch configurations, and the Salesforce Org that the configurator would save leads.
+          * @type {string}
+         */
         "orgId": string;
+        /**
+          * The room ID to associate the configuration with.
+          * @type {string}
+         */
         "roomId": string;
+        /**
+          * A string representation of a JSON object that contains the current user's details, which would be used to pre-fill the Quotation Form.
+          * @type {string}
+         */
         "user": string;
     }
     interface IntakeForm {
@@ -31,8 +80,6 @@ export namespace Components {
         "mode": string;
     }
     interface PricePreview {
-    }
-    interface TabAbout {
     }
     interface TabColors {
         "mode": string;
@@ -77,12 +124,6 @@ declare global {
         prototype: HTMLPricePreviewElement;
         new (): HTMLPricePreviewElement;
     };
-    interface HTMLTabAboutElement extends Components.TabAbout, HTMLStencilElement {
-    }
-    var HTMLTabAboutElement: {
-        prototype: HTMLTabAboutElement;
-        new (): HTMLTabAboutElement;
-    };
     interface HTMLTabColorsElement extends Components.TabColors, HTMLStencilElement {
     }
     var HTMLTabColorsElement: {
@@ -112,7 +153,6 @@ declare global {
         "intake-form": HTMLIntakeFormElement;
         "live-preview": HTMLLivePreviewElement;
         "price-preview": HTMLPricePreviewElement;
-        "tab-about": HTMLTabAboutElement;
         "tab-colors": HTMLTabColorsElement;
         "tab-fuel": HTMLTabFuelElement;
         "tab-watts": HTMLTabWattsElement;
@@ -121,17 +161,65 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IdlogProductConfigurator {
+        /**
+          * The iDialogue API URL that the configurator would communicate with.
+          * @type {string}
+         */
         "apiUrl"?: string;
-        "baseUrl"?: string;
-        "configId"?: string;
+        /**
+          * The base URL of the assets used by the configurator.
+          * @type {string}
+         */
+        "baseUrl": string;
+        /**
+          * The ID of the template or configuration that the configurator would use to load the initial configuration options.
+          * @type {string}
+         */
+        "configId": string;
+        /**
+          * The Lead ID. If empty, it'll auto-create one when the user interacts with the configurator for the first time.
+          * @type {string}
+         */
         "crmId"?: string;
+        /**
+          * Force mobile layout view, primarily used by the portal builder to preview the mobile view of the configurator.
+          * @type {boolean}
+         */
         "forceMobile"?: boolean;
+        /**
+          * If preview mode is enabled, the configurator will not send any events/requests to the API endpoint
+          * @type {boolean}
+         */
         "isPreviewMode"?: boolean;
+        /**
+          * The item ID of the configuration plugin that is loaded in a particular room.
+          * @type {string}
+         */
         "itemId"?: string;
+        /**
+          * The member ID of the current user in the room.
+          * @type {string}
+         */
         "memberId"?: string;
-        "mode"?: string;
-        "orgId"?: string;
+        /**
+          * The configurator mode. Note: 3D models are not included in this repository.
+          * @type {Modes}
+         */
+        "mode"?: Modes;
+        /**
+          * The Salesforce OrgID that the configurator would use to fetch configurations, and the Salesforce Org that the configurator would save leads.
+          * @type {string}
+         */
+        "orgId": string;
+        /**
+          * The room ID to associate the configuration with.
+          * @type {string}
+         */
         "roomId"?: string;
+        /**
+          * A string representation of a JSON object that contains the current user's details, which would be used to pre-fill the Quotation Form.
+          * @type {string}
+         */
         "user"?: string;
     }
     interface IntakeForm {
@@ -146,8 +234,6 @@ declare namespace LocalJSX {
         "mode"?: string;
     }
     interface PricePreview {
-    }
-    interface TabAbout {
     }
     interface TabColors {
         "mode"?: string;
@@ -174,7 +260,6 @@ declare namespace LocalJSX {
         "intake-form": IntakeForm;
         "live-preview": LivePreview;
         "price-preview": PricePreview;
-        "tab-about": TabAbout;
         "tab-colors": TabColors;
         "tab-fuel": TabFuel;
         "tab-watts": TabWatts;
@@ -189,7 +274,6 @@ declare module "@stencil/core" {
             "intake-form": LocalJSX.IntakeForm & JSXBase.HTMLAttributes<HTMLIntakeFormElement>;
             "live-preview": LocalJSX.LivePreview & JSXBase.HTMLAttributes<HTMLLivePreviewElement>;
             "price-preview": LocalJSX.PricePreview & JSXBase.HTMLAttributes<HTMLPricePreviewElement>;
-            "tab-about": LocalJSX.TabAbout & JSXBase.HTMLAttributes<HTMLTabAboutElement>;
             "tab-colors": LocalJSX.TabColors & JSXBase.HTMLAttributes<HTMLTabColorsElement>;
             "tab-fuel": LocalJSX.TabFuel & JSXBase.HTMLAttributes<HTMLTabFuelElement>;
             "tab-watts": LocalJSX.TabWatts & JSXBase.HTMLAttributes<HTMLTabWattsElement>;

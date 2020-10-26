@@ -4,36 +4,84 @@ import mockData from './mock-data.json';
 import { IConfiguration, IUser, IWattChangeEvent } from './interfaces';
 import colorMap from '../../utils/color-map';
 
+export type Modes = '2d' | '3d';
+
 @Component({
   tag: 'idlog-product-configurator',
   styleUrl: 'idlog-product-configurator.css',
   shadow: true,
 })
 export class IdlogProductConfigurator {
-  // @TODO: Write comments for props that is required
-
-  @Prop() baseUrl: string = location.origin;
-
+  /**
+   * The iDialogue API URL that the configurator would communicate with.
+   * @type {string}
+   */
   @Prop() apiUrl: string = 'https://api.i-dialogue.com/v1';
 
-  @Prop() mode: string = '2d';
+  /**
+   * The configurator mode. Note: 3D models are not included in this repository.
+   * @type {Modes}
+   */
+  @Prop() mode: Modes = '2d';
 
+  /**
+   * Force mobile layout view, primarily used by the portal builder to preview the mobile view of the configurator.
+   * @type {boolean}
+   */
   @Prop() forceMobile: boolean = false;
 
-  @Prop() orgId: string;
+  /**
+   * The base URL of the assets used by the configurator.
+   * @type {string}
+   */
+  @Prop() baseUrl!: string;
 
-  @Prop() configId: string;
+  /**
+   * The Salesforce OrgID that the configurator would use to fetch configurations, and the Salesforce Org that the configurator would save leads.
+   * @type {string}
+   */
+  @Prop() orgId!: string;
 
-  @Prop() roomId: string = '';
+  /**
+   * The ID of the template or configuration that the configurator would use to load the initial configuration options.
+   * @type {string}
+   */
+  @Prop() configId!: string;
 
-  @Prop() itemId: string = '';
+  /**
+   * The room ID to associate the configuration with.
+   * @type {string}
+   */
+  @Prop() roomId: string;
 
-  @Prop() memberId: string = '';
+  /**
+   * The item ID of the configuration plugin that is loaded in a particular room.
+   * @type {string}
+   */
+  @Prop() itemId: string;
 
+  /**
+   * The member ID of the current user in the room.
+   * @type {string}
+   */
+  @Prop() memberId: string;
+
+  /**
+   * The Lead ID. If empty, it'll auto-create one when the user interacts with the configurator for the first time.
+   * @type {string}
+   */
   @Prop() crmId: string;
 
+  /**
+   * A string representation of a JSON object that contains the current user's details, which would be used to pre-fill the Quotation Form.
+   * @type {string}
+   */
   @Prop() user: string;
 
+  /**
+   * If preview mode is enabled, the configurator will not send any events/requests to the API endpoint
+   * @type {boolean}
+   */
   @Prop() isPreviewMode: boolean = false;
 
   //-------- States --------//
